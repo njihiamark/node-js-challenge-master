@@ -10,8 +10,8 @@ router.get('/', function(req, res) {
           let rankedArticles = requestGetter('http://analytics.hivisasa.tech/ranked');
           let latestArticles = requestGetter('http://analytics.hivisasa.tech/latest');
 
-          //calling the requests in a specific order
-          locations.then(rankedArticles).then(latestArticles).then(render_articles(res, req, rankedArticles, latestArticles, locations));
+          //let's render them now
+          latestArticles.then(render_articles(res, req, rankedArticles, latestArticles, locations));
       });
 });
 
