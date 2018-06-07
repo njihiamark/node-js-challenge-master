@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
           let latestArticles = requestGetter('http://analytics.hivisasa.tech/latest');
 
           //let's render them now
-          latestArticles.then(render_articles(res, req, rankedArticles, latestArticles, locations));
+          render_articles(res, req, rankedArticles, latestArticles, locations);
       });
 });
 
